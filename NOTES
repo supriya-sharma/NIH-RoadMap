@@ -1,0 +1,19 @@
+
+#setup
+
+# only one time
+# this assumes you have no other python loaded 
+module load anaconda/2.2.0
+conda create -p ./dev_python python --yes
+source activate ./dev_python
+pip install git+https://github.com/xxinfinityxx/robobrowser
+pip install begins
+
+# every other time
+module load anaconda/2.2.0
+source activate ./dev_python
+
+# short cut for setting this directory as part of python path
+# assumes this is the directory where 'get_urls.py' exists
+export PYTHONPATH=`pwd`
+
